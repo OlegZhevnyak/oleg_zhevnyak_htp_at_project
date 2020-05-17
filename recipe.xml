@@ -1,0 +1,22 @@
+<car>
+    <kyzov>
+        <CarType>sedan</CarType>
+        <dors-seats>4/5</dors-seats>
+        <DistanceFromTheGround>100</DistanceFromTheGround>
+        <V>520</V>
+        <wheels>175/65 14H</wheels>
+    </kyzov>
+
+    {
+    <engine>
+        <EngineType>benzin</EngineType>
+        <engineV>AI-95</engineV>
+        <MaxPower>(5100)</MaxPower>
+    </engine>
+
+    {
+    <vehicle>
+        <PeredniyPrivod>da</PeredniyPrivod>
+        <TypeKPP-NumberOfPeredach>MKPP-5</TypeKPP-NumberOfPeredach>
+    </vehicle>
+</car>
