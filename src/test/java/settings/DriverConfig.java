@@ -1,5 +1,5 @@
 package settings;
 
-public enum  DriverConfig {
+public enum DriverConfig {
     CHROME, FF, EDGE
 }
