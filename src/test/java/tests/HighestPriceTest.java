@@ -1,0 +1,53 @@
+package tests;
+
+import driver.GetDriver;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import pages.booking.StaysHomePage;
+import settings.DriverConfig;
+import settings.ScreenMode;
+import steps.SimpleSteps;
+
+import java.util.concurrent.TimeUnit;
+
+public class HighestPriceTest {
+    
+    int startThrough = 7;
+    int duration = 3;
+    int adultNeed = 4;
+    int roomNeed = 2;
+    WebElement element;
+    WebDriver driver;
+
+    @Before
+    public void preCondition() {
+        driver = GetDriver.getWebDriver(DriverConfig.CHROME);
+        SimpleSteps.followTheLinkSetWindowMode(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
+    }
+
+    @Test
+    public void booking1Test() throws InterruptedException {
+        StaysHomePage.setCityDateGuests(driver, "Paris", 3, 7, 2,0,2 );
+        TimeUnit.SECONDS.sleep(4);
+
+        SimpleSteps.findElementClick(driver, "//*[contains(@class, \"sort_price\")]/a");
+        SimpleSteps.findElementClick(driver, "//*[@id=\"filter_price\"]//a[5]");
+        TimeUnit.SECONDS.sleep(2);
+
+        String maxPrice = SimpleSteps.findElementGetText(driver, "//*[@id=\"filter_price\"]//a[5]").replaceAll("\\D+", "");
+        String firstPrice = SimpleSteps.findElementGetText(driver, "//*[contains(@class, \"bui-price-display\")]/div[2]/div").replaceAll("\\D+", "");
+        int firstOneDayPrice = Integer.parseInt(firstPrice) / startThrough;
+
+        System.out.println("Price: " + maxPrice + "+; Min one Night Price: " + firstOneDayPrice);
+        Assert.assertTrue(firstOneDayPrice >= Integer.parseInt(maxPrice));
+    }
+
+    @After
+    public void postCondition() {
+        SimpleSteps.destroyDriver(driver);
+    }
+}
