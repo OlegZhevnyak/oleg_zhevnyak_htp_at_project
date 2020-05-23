@@ -7,7 +7,7 @@ import tests.HighestPriceTest;
 import tests.LowestPriceTest;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({HighestPriceTest.class})
+@Suite.SuiteClasses({HighestPriceTest.class, LowestPriceTest.class, ChangeColorTest.class})
 
 public class BookingRunner {
 }
