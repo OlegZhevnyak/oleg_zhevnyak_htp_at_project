@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
         plugin = {"pretty"},
         glue = {"steps.simple", "steps.gui", "steps.api"},
-        features = {"src/test/java/resources/features/userApiTest.feature"
+        features = {"src/test/resources/features/userApiTest.feature"
         },
         monochrome = false,
         snippets = SnippetType.CAMELCASE,
