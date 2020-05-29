@@ -9,9 +9,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <!--<properties>-->
-        <!--&lt;!&ndash; Needed for allure-maven-plugin to specify report version &ndash;&gt;-->
-        <!--<allure.version>1.5.2</allure.version>-->
-        <!--<aspectj.version>1.8.4</aspectj.version>-->
+    <!--&lt;!&ndash; Needed for allure-maven-plugin to specify report version &ndash;&gt;-->
+    <!--<allure.version>1.5.2</allure.version>-->
+    <!--<aspectj.version>1.8.4</aspectj.version>-->
     <!--</properties>-->
 
     <build>
@@ -98,7 +98,6 @@
             <version>1.2.17</version>
         </dependency>
 
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -114,6 +113,11 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-chrome-driver</artifactId>
             <version>4.0.0-alpha-2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>3.141.59</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/junit/junit -->
