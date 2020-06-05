@@ -17,27 +17,27 @@ public class MainPage {
     private static WebElement element;
     private static WebDriver driver;
 
-    public static WebElement webElementNewUserTab(WebDriver driver, String xPath) {
+    public static WebElement webElementNewUserTab() {
         element = driver.findElement(By.xpath(xPathNewUserTab));
         return element;
     }
 
-    public static WebElement webElementUsernameTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementUsernameTextField() {
         element = driver.findElement(By.xpath(xPathUsernameTextField));
         return element;
     }
 
-    public static WebElement webElementPasswordTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementPasswordTextField() {
         element = driver.findElement(By.xpath(xPathPasswordTextField));
         return element;
     }
 
-    public static WebElement webElementPasswordRepeatTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementPasswordRepeatTextField() {
         element = driver.findElement(By.xpath(xPathPasswordRepeatTextField));
         return element;
     }
 
-    public static WebElement webElementEmailTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementEmailTextField() {
         element = driver.findElement(By.xpath(xPathEmailTextField));
         return element;
     }
