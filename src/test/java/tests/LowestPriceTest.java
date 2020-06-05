@@ -13,6 +13,7 @@ import org.openqa.selenium.interactions.Actions;
 import pages.booking.StaysHomePage;
 import settings.DriverConfig;
 import settings.ScreenMode;
+import steps.GeneralSteps;
 import steps.SimpleSteps;
 
 import java.util.concurrent.TimeUnit;
@@ -28,7 +29,7 @@ public class LowestPriceTest {
     @Before
     public void preCondition() {
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
-        SimpleSteps.followTheLinkSetWindowMode(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
+        GeneralSteps.openPage(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
     }
 
     @Test
@@ -60,9 +61,9 @@ public class LowestPriceTest {
                 pricePerDay <= Integer.parseInt(highestPricePerDay));
     }
 
-    @After
-    public void postCondition() {
-        SimpleSteps.destroyDriver(driver);
-    }
+//    @After
+//    public void postCondition() {
+//        GeneralSteps.destroyDriver(driver);
+//    }
 
 }

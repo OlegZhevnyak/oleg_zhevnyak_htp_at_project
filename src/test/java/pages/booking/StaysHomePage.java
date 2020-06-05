@@ -18,7 +18,7 @@ public class StaysHomePage {
         element.sendKeys(Keys.chord(Keys.CONTROL, "a"), City);
         SimpleSteps.findElementClick(driver, "//*[contains(@class, \"xp__input-group xp__date-time\")]");
         SimpleSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", setDays(startThrough)));
-        SimpleSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", setDays(duration + startThrough)));  //set days
+        SimpleSteps.findElementClick(driver, String.format("//*[contains(@data-date, \"%s\")]", setDays(duration + startThrough)));
         SimpleSteps.findElementClick(driver, "//*[@id=\"xp__guests__toggle\"]");
         int adultAmount = Integer.parseInt(SimpleSteps.findElementGetAttribute(driver,
                 "//*[contains(@class,\"field-adult\")]//input", "value"));
@@ -27,7 +27,7 @@ public class StaysHomePage {
         int roomAmount = Integer.parseInt(SimpleSteps.findElementGetAttribute(driver,
                 "//*[contains(@class,\"field-rooms\")]//input", "value"));
         SimpleSteps.findElementClickRepeat(driver, "//*[contains(@aria-describedby, \"no_rooms_desc\")]" +
-                "[contains(@class, \"add\")]", roomAmount, numberOfChildren); //set adult and room amount
+                "[contains(@class, \"add\")]", roomAmount, numberOfChildren);
         int childAmount = Integer.parseInt(SimpleSteps.findElementGetAttribute(driver,
                 "//*[@id=\"group_children\"]", "value"));
         SimpleSteps.findElementClickRepeat(driver, "//*[contains(@aria-describedby, \"group_children_desc\")]" +

@@ -13,6 +13,7 @@ import pages.booking.StaysHomePage;
 import pages.booking.StaysSearchResultsPage;
 import settings.DriverConfig;
 import settings.ScreenMode;
+import steps.GeneralSteps;
 import steps.SimpleSteps;
 
 import java.util.concurrent.TimeUnit;
@@ -30,7 +31,7 @@ public class ChangeColorTest {
     @Before
     public void preCondition() {
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
-        SimpleSteps.followTheLinkSetWindowMode(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
+        GeneralSteps.openPage(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
     }
 
     @Test
@@ -56,7 +57,7 @@ public class ChangeColorTest {
 
     @After
     public void postCondition() {
-        SimpleSteps.destroyDriver(driver);
+        GeneralSteps.destroyDriver(driver);
     }
 
 }

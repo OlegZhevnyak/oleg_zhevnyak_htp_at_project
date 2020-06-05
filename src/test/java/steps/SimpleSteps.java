@@ -3,8 +3,6 @@ package steps;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import settings.DriverScreenSettings;
-import settings.ScreenMode;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -21,11 +19,6 @@ public class SimpleSteps {
     }
 
     static WebElement element;
-
-    public static void followTheLinkSetWindowMode(WebDriver driver, String url, ScreenMode screenMode){
-        DriverScreenSettings.setScreenMode(screenMode, driver);
-        driver.get(url);
-    }
 
     public static void findElementClick(WebDriver driver, String xPath) {
         element = driver.findElement(By.xpath(xPath));
@@ -61,11 +54,6 @@ public class SimpleSteps {
 
     public static String findElementGetText(WebDriver driver, String xPath){
         return driver.findElement(By.xpath(xPath)).getText();
-    }
-
-    public static void destroyDriver(WebDriver driver){
-        driver.close();
-        driver.quit();
     }
 
 }

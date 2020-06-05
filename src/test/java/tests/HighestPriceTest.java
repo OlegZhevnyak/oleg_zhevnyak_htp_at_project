@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import pages.booking.StaysHomePage;
 import settings.DriverConfig;
 import settings.ScreenMode;
+import steps.GeneralSteps;
 import steps.SimpleSteps;
 
 import java.util.concurrent.TimeUnit;
@@ -27,7 +28,7 @@ public class HighestPriceTest {
     @Before
     public void preCondition() {
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
-        SimpleSteps.followTheLinkSetWindowMode(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
+        GeneralSteps.openPage(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
     }
 
     @Test
@@ -37,11 +38,11 @@ public class HighestPriceTest {
         TimeUnit.SECONDS.sleep(4);
 
         SimpleSteps.findElementClick(driver, "//*[contains(@class, \"sort_price\")]/a");
-        SimpleSteps.findElementClick(driver, "//*[@id=\"filter_price\"]//a[5]");
+        SimpleSteps.findElementClick(driver, "//*[@id=\"filter_price\"]//a[last()]");
         TimeUnit.SECONDS.sleep(2);
 
         String highestPricePerDay = SimpleSteps.findElementGetText(driver,
-                "//*[@id=\"filter_price\"]//a[5]").replaceAll("\\D+", "");
+                "//*[@id=\"filter_price\"]//a[last()]").replaceAll("\\D+", "");
 
         String firstPrice = SimpleSteps.findElementGetText(driver,
                 "//*[contains(@class, \"bui-price-display\")]/div[2]/div").replaceAll("\\D+", "");
@@ -54,6 +55,6 @@ public class HighestPriceTest {
 
     @After
     public void postCondition() {
-        SimpleSteps.destroyDriver(driver);
+        GeneralSteps.destroyDriver(driver);
     }
 }
