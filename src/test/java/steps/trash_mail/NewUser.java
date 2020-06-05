@@ -1,8 +1,8 @@
-package steps;
+package steps.trash_mail;
 
 import pages.trash_mail.MainPage;
 
-public class TrashMailSteps {
+public class NewUser {
 
     public static void newUserTabClick() {
         MainPage.webElementNewUserTab().click();
