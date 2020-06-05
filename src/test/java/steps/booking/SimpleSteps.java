@@ -1,4 +1,4 @@
-package steps;
+package steps.booking;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

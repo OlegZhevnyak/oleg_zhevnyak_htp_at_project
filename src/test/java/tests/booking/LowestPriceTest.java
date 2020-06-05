@@ -1,7 +1,6 @@
-package tests;
+package tests.booking;
 
 import driver.GetDriver;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -14,7 +13,7 @@ import pages.booking.StaysHomePage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
-import steps.SimpleSteps;
+import steps.booking.SimpleSteps;
 
 import java.util.concurrent.TimeUnit;
 
