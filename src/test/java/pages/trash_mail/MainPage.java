@@ -11,7 +11,7 @@ public class MainPage {
     private static String xPathPasswordTextField = "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.password\"]";
     private static String xPathPasswordRepeatTextField =
             "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.passwordRepeat\"]";
-    private static String xPathEmailTextField = "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.email\"]";
+    private static String xPathRealEmailTextField = "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.email\"]";
     private static String xPathRegisterButton = "//button[@ng-click=\"registerAccount(true);\"]";
 
     private static WebElement element;
@@ -37,8 +37,8 @@ public class MainPage {
         return element;
     }
 
-    public static WebElement webElementEmailTextField() {
-        element = driver.findElement(By.xpath(xPathEmailTextField));
+    public static WebElement webElementRealEmailTextField() {
+        element = driver.findElement(By.xpath(xPathRealEmailTextField));
         return element;
     }
 
