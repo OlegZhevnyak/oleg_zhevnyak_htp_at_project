@@ -9,10 +9,11 @@ public class MainPage {
     private static String xPathNewUserTab = "//a[@href=\"#tab-mob-register\"]";
     private static String xPathUsernameTextField = "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.name\"]";
     private static String xPathPasswordTextField = "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.password\"]";
-    private static String xPathPasswordRepeatTextField =
+    private static String xPathPasswordConfirmTextField =
             "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.passwordRepeat\"]";
     private static String xPathRealEmailTextField = "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.email\"]";
     private static String xPathRegisterButton = "//button[@ng-click=\"registerAccount(true);\"]";
+    private static String xPathResultAlert = "//span[@ng-bind-html=\"content\"]";
 
     private static WebElement element;
     private static WebDriver driver;
@@ -32,8 +33,8 @@ public class MainPage {
         return element;
     }
 
-    public static WebElement webElementPasswordRepeatTextField() {
-        element = driver.findElement(By.xpath(xPathPasswordRepeatTextField));
+    public static WebElement webElementPasswordConfirmTextField() {
+        element = driver.findElement(By.xpath(xPathPasswordConfirmTextField));
         return element;
     }
 
@@ -44,6 +45,11 @@ public class MainPage {
 
     public static WebElement webElementRegisterButton() {
         element = driver.findElement(By.xpath(xPathRegisterButton));
+        return element;
+    }
+
+    public static WebElement ResultAlert() {
+        element = driver.findElement(By.xpath(xPathResultAlert));
         return element;
     }
 
