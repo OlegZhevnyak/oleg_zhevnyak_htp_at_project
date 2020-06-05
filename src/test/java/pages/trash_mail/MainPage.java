@@ -14,30 +14,37 @@ public class MainPage {
     private static String xPathEmailTextField = "//div[@id=\"tab-mob-manager\"]//input[@ng-model=\"user.email\"]";
     private static String xPathRegisterButton = "//button[@ng-click=\"registerAccount(true);\"]";
 
-    private  static WebElement element;
+    private static WebElement element;
+    private static WebDriver driver;
 
-    public static void webElementNewUserTab(WebDriver driver, String xPath) {
+    public static WebElement webElementNewUserTab(WebDriver driver, String xPath) {
         element = driver.findElement(By.xpath(xPathNewUserTab));
+        return element;
     }
 
-    public static void webElementUsernameTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementUsernameTextField(WebDriver driver, String xPath) {
         element = driver.findElement(By.xpath(xPathUsernameTextField));
+        return element;
     }
 
-    public static void webElementPasswordTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementPasswordTextField(WebDriver driver, String xPath) {
         element = driver.findElement(By.xpath(xPathPasswordTextField));
+        return element;
     }
 
-    public static void webElementPasswordRepeatTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementPasswordRepeatTextField(WebDriver driver, String xPath) {
         element = driver.findElement(By.xpath(xPathPasswordRepeatTextField));
+        return element;
     }
 
-    public static void webElementEmailTextField(WebDriver driver, String xPath) {
+    public static WebElement webElementEmailTextField(WebDriver driver, String xPath) {
         element = driver.findElement(By.xpath(xPathEmailTextField));
+        return element;
     }
 
-    public static void webElementRegisterButton(WebDriver driver, String xPath) {
+    public static WebElement webElementRegisterButton() {
         element = driver.findElement(By.xpath(xPathRegisterButton));
+        return element;
     }
 
 }
