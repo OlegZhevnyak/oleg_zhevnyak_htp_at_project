@@ -42,12 +42,12 @@ public class RegistrationTest {
 
     @Test
     public void registrationConfirmTest() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(4);
-        CreateAccountSteps.registerButtonClick(driver);
-        TimeUnit.SECONDS.sleep(4);
-        CreateAccountSteps.emailSet(driver, DummyEmail3);
-        TimeUnit.SECONDS.sleep(4);
-        CreateAccountSteps.passwordSet(driver, Password, ConfirmPassword);
+//        TimeUnit.SECONDS.sleep(4);
+//        CreateAccountSteps.registerButtonClick(driver);
+//        TimeUnit.SECONDS.sleep(4);
+//        CreateAccountSteps.emailSet(driver, DummyEmail3);
+//        TimeUnit.SECONDS.sleep(4);
+//        CreateAccountSteps.passwordSet(driver, Password, ConfirmPassword);
         driver.get(YandexURL);
         TimeUnit.SECONDS.sleep(4);
 
@@ -82,8 +82,8 @@ public class RegistrationTest {
                 CreateAccountSteps.webElementEmailConfirmBanner(driver));
     }
 
-    @After
-    public void postCondition() {
-    GeneralSteps.destroyDriver(driver);
-    }
+//    @After
+//    public void postCondition() {
+//    GeneralSteps.destroyDriver(driver);
+//    }
 }

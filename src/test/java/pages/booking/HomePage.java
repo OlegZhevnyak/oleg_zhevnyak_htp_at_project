@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage {
 
-    public static String xPathRegisterLink = "//a[@id=\"b_tt_holder_1\"]//div[@class=\"sign_in_wrapper\"]";
+    public static String xPathRegisterLink = "//li[@id=\"current_account_create\"]/a/div[@class=\"sign_in_wrapper\"]";
     public static String xPathYourAccountLink = "//data-command=\"show-profile-menu\"]";
     public static String xPathMyDashboardLink = "//div[@class=\"profile-menu__item profile_menu__item--mydashboard\"]/a";
 

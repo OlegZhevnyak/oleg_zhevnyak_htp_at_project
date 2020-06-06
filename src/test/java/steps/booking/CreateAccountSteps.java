@@ -14,6 +14,8 @@ public class CreateAccountSteps {
         HomePage.webElementRegisterLink(driver).click();
     }
 
+   // AccountCreate accountCreate = new AccountCreate(driver);
+
     public static void emailSet(WebDriver driver, String email) {
         AccountCreate.webElementEmailTextField(driver).sendKeys(email);
         AccountCreate.webElementGetStartedButton(driver).click();
