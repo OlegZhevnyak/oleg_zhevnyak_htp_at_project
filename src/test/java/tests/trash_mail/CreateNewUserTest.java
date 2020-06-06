@@ -44,6 +44,8 @@ public class CreateNewUserTest {
                 ("//div[@id=\"tab-mob-register\"]//input[@ng-model=\"user.email\"]"));
         realEmailTextField.sendKeys(RealEmailAddress);
 
+
+
 //        NewUserSteps.realEmailType(driver, RealEmailAddress);
         NewUserSteps.registerButtonClick(driver);
         NewUserSteps.printResult(driver);

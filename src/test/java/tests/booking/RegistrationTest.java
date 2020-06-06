@@ -78,6 +78,8 @@ public class RegistrationTest {
 
         driver.get(BookingURL);
         CreateAccountSteps.dashboardOpen(driver);
+
+        //Assert true
         Assert.assertNull("Registration wasn't confirmed. Check email: " + TrueEmail + ".",
                 CreateAccountSteps.webElementEmailConfirmBanner(driver));
     }
