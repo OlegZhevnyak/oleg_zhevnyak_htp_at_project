@@ -33,7 +33,7 @@ public class CreateNewUserTest {
     }
 
     @Test
-    public void creatingNewUserTest() {
+    public void creatingNewUserTest() throws InterruptedException, Throwable {
 
         NewUserSteps.newUserTabClick(driver);
         NewUserSteps.usernameType(driver, Username);
