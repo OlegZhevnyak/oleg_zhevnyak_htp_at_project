@@ -10,22 +10,25 @@ public class HomePage {
     public static final String YOUR_ACCOUNT_LINK_XPATH = "//data-command='show-profile-menu']";
     public static final String MY_DASHBOARD_LINK_XPATH = "//div[@class='profile-menu__item profile_menu__item--mydashboard']/a";
 
-    public static WebElement element;
+    static WebDriver driver;
+
+    public HomePage(WebDriver driver) {
+        this.driver = driver;
+    }
 
     public static WebElement webElementRegisterLink(WebDriver driver) {
-        element = driver.findElement(By.xpath(REGISTER_LINK_XPATH));
-        return element;
+        return driver.findElement(By.xpath(REGISTER_LINK_XPATH));
     }
 
-    public static WebElement webElementYourAccountLink(WebDriver driver) {
-        element = driver.findElement(By.xpath(YOUR_ACCOUNT_LINK_XPATH));
-        return element;
-    }
-
-    public static WebElement webElementMyDashboardLink(WebDriver driver) {
-        element = driver.findElement(By.xpath(MY_DASHBOARD_LINK_XPATH));
-        return element;
-    }
+//    public static WebElement webElementYourAccountLink(WebDriver driver) {
+//        element = driver.findElement(By.xpath(YOUR_ACCOUNT_LINK_XPATH));
+//        return element;
+//    }
+//
+//    public static WebElement webElementMyDashboardLink(WebDriver driver) {
+//        element = driver.findElement(By.xpath(MY_DASHBOARD_LINK_XPATH));
+//        return element;
+//    }
 
 }
 

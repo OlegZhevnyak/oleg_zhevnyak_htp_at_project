@@ -42,46 +42,46 @@ public class RegistrationTest {
 
     @Test
     public void registrationConfirmTest() throws InterruptedException {
-//        TimeUnit.SECONDS.sleep(4);
-//        CreateAccountSteps.registerButtonClick(driver);
+        TimeUnit.SECONDS.sleep(4);
+        CreateAccountSteps.registerButtonClick(driver);
 //        TimeUnit.SECONDS.sleep(4);
 //        CreateAccountSteps.emailSet(driver, DummyEmail3);
 //        TimeUnit.SECONDS.sleep(4);
 //        CreateAccountSteps.passwordSet(driver, Password, ConfirmPassword);
-        driver.get(YandexURL);
-        TimeUnit.SECONDS.sleep(4);
-
-        YandexPage.webElementLogInputButton(driver).click();
-        TimeUnit.SECONDS.sleep(8);
-
+//        driver.get(YandexURL);
+//        TimeUnit.SECONDS.sleep(4);
+//
+//        YandexPage.webElementLogInputButton(driver).click();
+//        TimeUnit.SECONDS.sleep(8);
+//
 //        WebElement EmailTextField = driver.findElement(By.xpath("//*[@id='passp-field-login']"));
 //        EmailTextField.sendKeys(TrueEmail);
 
-        YandexPage.webElementEmailTextField(driver).sendKeys(TrueEmail);
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementSubmitEmailButton(driver).click();
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementPasswordTextField(driver).sendKeys("55545678");
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementSubmitPasswordButton(driver).click();
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementSearchField(driver).sendKeys("Booking");
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementSearchSubmitButton(driver).click();
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementMailOpen(driver).click();
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementAllowButton(driver).click();
-        TimeUnit.SECONDS.sleep(4);
-        YandexPage.webElementConfirmRegistrationButton(driver).click();
-        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementEmailTextField(driver).sendKeys(TrueEmail);
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementSubmitEmailButton(driver).click();
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementPasswordTextField(driver).sendKeys("55545678");
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementSubmitPasswordButton(driver).click();
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementSearchField(driver).sendKeys("Booking");
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementSearchSubmitButton(driver).click();
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementMailOpen(driver).click();
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementAllowButton(driver).click();
+//        TimeUnit.SECONDS.sleep(4);
+//        YandexPage.webElementConfirmRegistrationButton(driver).click();
+//        TimeUnit.SECONDS.sleep(4);
 
-        driver.get(BookingURL);
-        CreateAccountSteps.dashboardOpen(driver);
-
-        //Assert true
-        Assert.assertNull("Registration wasn't confirmed. Check email: " + TrueEmail + ".",
-                CreateAccountSteps.webElementEmailConfirmBanner(driver));
+//        driver.get(BookingURL);
+//        CreateAccountSteps.dashboardOpen(driver);
+//
+//        //Assert true
+//        Assert.assertNull("Registration wasn't confirmed. Check email: " + TrueEmail + ".",
+//                CreateAccountSteps.webElementEmailConfirmBanner(driver));
     }
 
 //    @After

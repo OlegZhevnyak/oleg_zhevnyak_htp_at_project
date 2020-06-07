@@ -12,8 +12,6 @@ public class AccountCreatePage {
     public static final String CONFIRM_PASSWORD_TEXT_FIELD_XPATH = "//input[@id='confirmed_password']";
     public static final String CREATE_ACCOUNT_BUTTON_XPATH = "//button[@class='bui-button bui-button--large bui-button--wide']";
 
-    static WebElement element;
-
     static WebDriver driver;
 
     public AccountCreatePage(WebDriver driver) {
@@ -21,28 +19,26 @@ public class AccountCreatePage {
     }
 
     public static WebElement webElementEmailTextField() {
-        element = driver.findElement(By.xpath(MAIL_TEXT_FIELD_XPATH));
-        return element;
+        return driver.findElement(By.xpath(MAIL_TEXT_FIELD_XPATH));
     }
 
     public static WebElement webElementGetStartedButton() {
-        element = driver.findElement(By.xpath(GET_STARTED_BUTTON_XPATH));
-        return element;
+        return driver.findElement(By.xpath(GET_STARTED_BUTTON_XPATH));
     }
-
-    public static WebElement webElementCreatePasswordTextField(WebDriver driver) {
-        element = driver.findElement(By.xpath(CREATE_PASSWORD_TEXT_FIELD_XPATH));
-        return element;
-    }
-
-    public static WebElement webElementConfirmPasswordTextField(WebDriver driver) {
-        element = driver.findElement(By.xpath(CONFIRM_PASSWORD_TEXT_FIELD_XPATH));
-        return element;
-    }
-
-    public static WebElement webElementCreateAccountButton(WebDriver driver) {
-        element = driver.findElement(By.xpath(CREATE_ACCOUNT_BUTTON_XPATH));
-        return element;
-    }
+//
+//    public static WebElement webElementCreatePasswordTextField(WebDriver driver) {
+//        element = driver.findElement(By.xpath(CREATE_PASSWORD_TEXT_FIELD_XPATH));
+//        return element;
+//    }
+//
+//    public static WebElement webElementConfirmPasswordTextField(WebDriver driver) {
+//        element = driver.findElement(By.xpath(CONFIRM_PASSWORD_TEXT_FIELD_XPATH));
+//        return element;
+//    }
+//
+//    public static WebElement webElementCreateAccountButton(WebDriver driver) {
+//        element = driver.findElement(By.xpath(CREATE_ACCOUNT_BUTTON_XPATH));
+//        return element;
+//    }
 
 }
