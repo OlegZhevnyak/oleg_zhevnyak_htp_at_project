@@ -6,24 +6,24 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage {
 
-    public static String xPathRegisterLink = "//li[@id=\"current_account_create\"]/a/div[@class=\"sign_in_wrapper\"]";
-    public static String xPathYourAccountLink = "//data-command=\"show-profile-menu\"]";
-    public static String xPathMyDashboardLink = "//div[@class=\"profile-menu__item profile_menu__item--mydashboard\"]/a";
+    public static final String REGISTER_LINK_XPATH = "//li[@id='current_account_create']/a/div[@class='sign_in_wrapper']";
+    public static final String YOUR_ACCOUNT_LINK_XPATH = "//data-command='show-profile-menu']";
+    public static final String MY_DASHBOARD_LINK_XPATH = "//div[@class='profile-menu__item profile_menu__item--mydashboard']/a";
 
     public static WebElement element;
 
     public static WebElement webElementRegisterLink(WebDriver driver) {
-        element = driver.findElement(By.xpath(xPathRegisterLink));
+        element = driver.findElement(By.xpath(REGISTER_LINK_XPATH));
         return element;
     }
 
     public static WebElement webElementYourAccountLink(WebDriver driver) {
-        element = driver.findElement(By.xpath(xPathYourAccountLink));
+        element = driver.findElement(By.xpath(YOUR_ACCOUNT_LINK_XPATH));
         return element;
     }
 
     public static WebElement webElementMyDashboardLink(WebDriver driver) {
-        element = driver.findElement(By.xpath(xPathMyDashboardLink));
+        element = driver.findElement(By.xpath(MY_DASHBOARD_LINK_XPATH));
         return element;
     }
 

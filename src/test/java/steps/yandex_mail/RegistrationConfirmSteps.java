@@ -1,8 +1,6 @@
 package steps.yandex_mail;
 
 import org.openqa.selenium.WebDriver;
-import pages.booking.AccountCreate;
-import pages.booking.HomePage;
 import pages.yandex_mail.YandexPage;
 
 public class RegistrationConfirmSteps {
