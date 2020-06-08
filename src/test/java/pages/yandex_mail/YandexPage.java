@@ -17,56 +17,50 @@ public class YandexPage {
     public static final String ALLOW_BUTTON_XPATH = "//button[@class=' nb-button _nb-small-pseudo-button js-show-content']/span";
     public static final String CONFIRM_REGISTRATION_BUTTON_XPATH = "//td[@bgcolor='#0071C2']/a";
 
-    public static WebElement element;
+    public static WebDriver driver;
 
-    public static WebElement webElementLogInputButton(WebDriver driver) {
-        element = driver.findElement(By.xpath(LOGIN_INPUT_BUTTON_XPATH));
-        return element;
+    public YandexPage(WebDriver driver){
+        this.driver=driver;
     }
 
-    public static WebElement webElementEmailTextField(WebDriver driver) {
-        element = driver.findElement(By.xpath(EMAIL_TEXT_FIELD_XPATH));
-        return element;
+    public static WebElement webElementLogInputButton() {
+        return driver.findElement(By.xpath(LOGIN_INPUT_BUTTON_XPATH));
     }
 
-    public static WebElement webElementSubmitEmailButton(WebDriver driver) {
-        element = driver.findElement(By.xpath(SUBMIT_EMAIL_BUTTON_XPATH));
-        return element;
+    public static WebElement webElementEmailTextField() {
+        return driver.findElement(By.xpath(EMAIL_TEXT_FIELD_XPATH));
     }
 
-    public static WebElement webElementPasswordTextField(WebDriver driver) {
-        element = driver.findElement(By.xpath(PASSWORD_TEXT_FIELD_XPATH));
-        return element;
+    public static WebElement webElementSubmitEmailButton() {
+        return driver.findElement(By.xpath(SUBMIT_EMAIL_BUTTON_XPATH));
     }
 
-    public static WebElement webElementSubmitPasswordButton(WebDriver driver) {
-        element = driver.findElement(By.xpath(SUBMIT_PASSWORD_BUTTON_XPATH));
-        return element;
+    public static WebElement webElementPasswordTextField() {
+        return driver.findElement(By.xpath(PASSWORD_TEXT_FIELD_XPATH));
     }
 
-    public static WebElement webElementSearchField(WebDriver driver) {
-        element = driver.findElement(By.xpath(SEARCH_FIELD_XPATH));
-        return element;
+    public static WebElement webElementSubmitPasswordButton() {
+        return driver.findElement(By.xpath(SUBMIT_PASSWORD_BUTTON_XPATH));
     }
 
-    public static WebElement webElementSearchSubmitButton(WebDriver driver) {
-        element = driver.findElement(By.xpath(SEARCH_SUBMIT_BUTTON_XPATH));
-        return element;
+    public static WebElement webElementSearchField() {
+        return driver.findElement(By.xpath(SEARCH_FIELD_XPATH));
     }
 
-    public static WebElement webElementMailOpen(WebDriver driver) {
-        element = driver.findElement(By.xpath(MAIL_OPEN_XPATH));
-        return element;
+    public static WebElement webElementSearchSubmitButton() {
+        return driver.findElement(By.xpath(SEARCH_SUBMIT_BUTTON_XPATH));
     }
 
-    public static WebElement webElementAllowButton(WebDriver driver) {
-        element = driver.findElement(By.xpath(ALLOW_BUTTON_XPATH));
-        return element;
+    public static WebElement webElementMailOpen() {
+        return driver.findElement(By.xpath(MAIL_OPEN_XPATH));
     }
 
-    public static WebElement webElementConfirmRegistrationButton(WebDriver driver) {
-        element = driver.findElement(By.xpath(CONFIRM_REGISTRATION_BUTTON_XPATH));
-        return element;
+    public static WebElement webElementAllowButton() {
+        return driver.findElement(By.xpath(ALLOW_BUTTON_XPATH));
+    }
+
+    public static WebElement webElementConfirmRegistrationButton() {
+        return driver.findElement(By.xpath(CONFIRM_REGISTRATION_BUTTON_XPATH));
     }
 
 }

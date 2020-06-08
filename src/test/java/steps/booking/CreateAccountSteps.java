@@ -10,36 +10,47 @@ import settings.DriverConfig;
 
 public class CreateAccountSteps {
 
-    public static WebElement element;
-
-
+    public static final String BOOKING_URL = "https://www.booking.com/";
 
     static AccountCreatePage accountCreatePage = new AccountCreatePage(GetDriver.getWebDriver(DriverConfig.CHROME));
     static HomePage homePage = new HomePage(GetDriver.getWebDriver(DriverConfig.CHROME));
+    static DashboardPage dashboardPage = new DashboardPage(GetDriver.getWebDriver(DriverConfig.CHROME));
 
     public static void registerButtonClick(WebDriver driver) {
-        homePage.webElementRegisterLink(driver).click();
+        homePage.webElementRegisterLink().click();
     }
 
-    public static void emailSet(String email) {
+    public static void emailSet(WebDriver driver, String email) {
         accountCreatePage.webElementEmailTextField().sendKeys(email);
         accountCreatePage.webElementGetStartedButton().click();
     }
 
-//    public static void passwordSet(WebDriver driver, String password, String confirmPassword) {
-//        AccountCreatePage.webElementCreatePasswordTextField(driver).sendKeys(password);
-//        AccountCreatePage.webElementConfirmPasswordTextField(driver).sendKeys(confirmPassword);
-//        AccountCreatePage.webElementCreateAccountButton(driver).click();
-//    }
-//
-//    public static void dashboardOpen(WebDriver driver) {
-//        HomePage.webElementYourAccountLink(driver).click();
-//        HomePage.webElementMyDashboardLink(driver).click();
-//    }
-//
-//    public static WebElement webElementEmailConfirmBanner(WebDriver driver){
-//        element = DashboardPage.webElementEmailConfirmBanner(driver);
-//        return element;
-//    }
+    public static void passwordSet(WebDriver driver, String password, String confirmPassword) {
+        accountCreatePage.webElementCreatePasswordTextField().sendKeys(password);
+        accountCreatePage.webElementConfirmPasswordTextField().sendKeys(confirmPassword);
+        accountCreatePage.webElementCreateAccountButton().click();
+    }
+
+    public static void dashboardOpen(WebDriver driver) {
+        homePage.webElementYourAccountLink().click();
+        homePage.webElementMyDashboardLink().click();
+    }
+
+    public static void signIn(WebDriver driver, String email, String password) {
+        driver.get(BOOKING_URL);
+        homePage.webElementSignInLink().click();
+        accountCreatePage.webElementEmailTextField().sendKeys(email);
+        accountCreatePage.webElementGetStartedButton().click();
+        accountCreatePage.webElementCreatePasswordTextField().sendKeys(password);
+        accountCreatePage.webElementCreateAccountButton().click();
+    }
+
+    public static void welcomingAlertClose(WebDriver driver) {
+        homePage.welcomingAlertCloseButton().click();
+    }
+
+    public static WebElement webElementEmailConfirmBanner(WebDriver driver){
+        return dashboardPage.webElementEmailConfirmBanner();
+    }
 
 }

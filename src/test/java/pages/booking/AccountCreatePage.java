@@ -25,20 +25,17 @@ public class AccountCreatePage {
     public static WebElement webElementGetStartedButton() {
         return driver.findElement(By.xpath(GET_STARTED_BUTTON_XPATH));
     }
-//
-//    public static WebElement webElementCreatePasswordTextField(WebDriver driver) {
-//        element = driver.findElement(By.xpath(CREATE_PASSWORD_TEXT_FIELD_XPATH));
-//        return element;
-//    }
-//
-//    public static WebElement webElementConfirmPasswordTextField(WebDriver driver) {
-//        element = driver.findElement(By.xpath(CONFIRM_PASSWORD_TEXT_FIELD_XPATH));
-//        return element;
-//    }
-//
-//    public static WebElement webElementCreateAccountButton(WebDriver driver) {
-//        element = driver.findElement(By.xpath(CREATE_ACCOUNT_BUTTON_XPATH));
-//        return element;
-//    }
+
+    public static WebElement webElementCreatePasswordTextField() {
+        return driver.findElement(By.xpath(CREATE_PASSWORD_TEXT_FIELD_XPATH));
+    }
+
+    public static WebElement webElementConfirmPasswordTextField() {
+        return driver.findElement(By.xpath(CONFIRM_PASSWORD_TEXT_FIELD_XPATH));
+    }
+
+    public static WebElement webElementCreateAccountButton() {
+        return driver.findElement(By.xpath(CREATE_ACCOUNT_BUTTON_XPATH));
+    }
 
 }

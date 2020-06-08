@@ -1,59 +1,59 @@
 package tests.booking;
 
 import driver.GetDriver;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import pages.yandex_mail.YandexPage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
 import steps.booking.CreateAccountSteps;
-import steps.yandex_mail.RegistrationConfirmSteps;
 
 import java.util.concurrent.TimeUnit;
 
 public class RegistrationTest {
 
-    String BookingURL = "https://www.booking.com/";
-    String YandexURL = "https://yandex.by/";
-    String DummyEmail3 = "joshuah.hickle@0box.eu";
-    String DummyEmail4 = "sandy_roob49@0box.eu";
-    String DummyEmail5 = "theresia_hilpert@0box.eu";
-    String DummyEmail6 = "ellsworth_dooley@0box.eu";
-    String DummyEmail7 = "javon45@0box.eu";
-    String Password = "test555456";
-    String ConfirmPassword = "test555456";
-    String TrueEmail = "test55545@yandex.by";
-    String TrueEmailPassword = "55545678";
-    String MailSearch = "Booking";
+    public static final String BOOKING_URL = "https://www.booking.com/";
+    public static final String YANDEX_URL = "https://yandex.by/";
+    public static final String DUMMY_EMAIL = "laurine70@0box.eu.eu";
+    public static final String DUMMY_EMAIL_4 = "rocio93@0box.eu.eu";
+    public static final String DUMMY_EMAIL_5 = "diego_rippin68@0box.eu.eu";
+    public static final String DUMMY_EMAIL_6 = "julien77@0box.eu";
+    public static final String DUMMY_EMAIL_7 = "julien77@0box.eu";
+    public static final String DUMMY_EMAIL_8 = "julien77@0box.eu";
+    public static final String BOOKING_PASSWORD = "test555456";
+    public static final String BOOKING_CONFIRM_PASSWORD = "test555456";
 
-    WebDriver driver;
+    public static final String YANDEX_EMAIL = "test55545@yandex.by";
+    public static final String YANDEX_PASSWORD = "55545678";
+    public static final String YANDEX_SEARCH_DATA = "booking";
+
+    public static WebDriver driver;
 
     @Before
     public void preCondition() {
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
-        GeneralSteps.openPage(driver, BookingURL, ScreenMode.MAXIMIZE);
+        GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Test
     public void registrationConfirmTest() throws InterruptedException {
-        TimeUnit.SECONDS.sleep(4);
         CreateAccountSteps.registerButtonClick(driver);
+        CreateAccountSteps.emailSet(driver, DUMMY_EMAIL);
+        CreateAccountSteps.passwordSet(driver, BOOKING_PASSWORD, BOOKING_CONFIRM_PASSWORD);
+
+//        driver.get(YANDEX_EMAIL);
 //        TimeUnit.SECONDS.sleep(4);
-//        CreateAccountSteps.emailSet(driver, DummyEmail3);
-//        TimeUnit.SECONDS.sleep(4);
-//        CreateAccountSteps.passwordSet(driver, Password, ConfirmPassword);
-//        driver.get(YandexURL);
-//        TimeUnit.SECONDS.sleep(4);
-//
+
+//        RegistrationConfirmSteps.RegistrationConfirm(driver, YANDEX_EMAIL, YANDEX_PASSWORD, YANDEX_SEARCH_DATA);
+
 //        YandexPage.webElementLogInputButton(driver).click();
 //        TimeUnit.SECONDS.sleep(8);
-//
+
 //        WebElement EmailTextField = driver.findElement(By.xpath("//*[@id='passp-field-login']"));
 //        EmailTextField.sendKeys(TrueEmail);
 
@@ -74,14 +74,27 @@ public class RegistrationTest {
 //        YandexPage.webElementAllowButton(driver).click();
 //        TimeUnit.SECONDS.sleep(4);
 //        YandexPage.webElementConfirmRegistrationButton(driver).click();
-//        TimeUnit.SECONDS.sleep(4);
 
-//        driver.get(BookingURL);
-//        CreateAccountSteps.dashboardOpen(driver);
-//
-//        //Assert true
-//        Assert.assertNull("Registration wasn't confirmed. Check email: " + TrueEmail + ".",
-//                CreateAccountSteps.webElementEmailConfirmBanner(driver));
+//        driver.get(BOOKING_URL);
+
+//        TimeUnit.SECONDS.sleep(2);
+//        WebElement SignIn = driver.findElement(By.xpath("//a[@id='b_tt_holder_1']"));
+//        SignIn.click();
+
+//        TimeUnit.SECONDS.sleep(2);
+//        CreateAccountSteps.signIn(driver, DUMMY_EMAIL, BOOKING_PASSWORD);
+
+        TimeUnit.SECONDS.sleep(2);
+        CreateAccountSteps.welcomingAlertClose(driver);
+
+        TimeUnit.SECONDS.sleep(2);
+        CreateAccountSteps.dashboardOpen(driver);
+
+
+
+        //Assert true
+        Assert.assertNull("Registration wasn't confirmed. Check email: " + YANDEX_EMAIL + ".",
+                CreateAccountSteps.webElementEmailConfirmBanner(driver));
     }
 
 //    @After

@@ -8,11 +8,13 @@ public class DashboardPage {
 
     public static final String EMAIL_CONFIRM_BANNER_XPATH = "//div[@class='email-confirm-banner']";
 
-    public static WebElement element;
+    public static WebDriver driver;
 
-    public static WebElement webElementEmailConfirmBanner(WebDriver driver) {
-        element = driver.findElement(By.xpath(EMAIL_CONFIRM_BANNER_XPATH));
-        return element;
+    public DashboardPage(WebDriver driver){
+    }
+
+    public static WebElement webElementEmailConfirmBanner() {
+        return driver.findElement(By.xpath(EMAIL_CONFIRM_BANNER_XPATH));
     }
 
 }
