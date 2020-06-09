@@ -1,12 +1,16 @@
 package steps.booking;
 
 import driver.GetDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.booking.AccountCreatePage;
 import pages.booking.DashboardPage;
 import pages.booking.HomePage;
 import settings.DriverConfig;
+
+import java.util.ArrayList;
 
 public class CreateAccountSteps {
 
@@ -32,6 +36,12 @@ public class CreateAccountSteps {
     }
 
     public static void dashboardOpen(WebDriver driver) {
+        //write 2 tabs
+        ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(0));                     //switch to the first tab
+        driver.close();                                             //close the first tab
+        driver.switchTo().window(tabs2.get(1));                     //switch to the second tab
+        driver.get(BOOKING_URL);
         homePage.webElementYourAccountLink().click();
         homePage.webElementMyDashboardLink().click();
     }
@@ -49,8 +59,14 @@ public class CreateAccountSteps {
         homePage.welcomingAlertCloseButton().click();
     }
 
-    public static WebElement webElementEmailConfirmBanner(WebDriver driver){
-        return dashboardPage.webElementEmailConfirmBanner();
+    public static Boolean isConfirmBannerPresented(WebDriver driver) {
+        Boolean elementCondition = false;
+        try {
+            elementCondition = driver.findElement(By.xpath(dashboardPage.EMAIL_CONFIRM_BANNER_XPATH)).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return elementCondition;
+        }
+        return elementCondition;
     }
 
 }

@@ -11,6 +11,7 @@ public class YandexPage {
     public static final String SUBMIT_EMAIL_BUTTON_XPATH = "//button[@type='submit']";
     public static final String PASSWORD_TEXT_FIELD_XPATH = "//input[@type='password']";
     public static final String SUBMIT_PASSWORD_BUTTON_XPATH = "//button[@type='submit']";
+    public static final String SPAM_LINK_XPATH = "//a[@href='#spam']";
     public static final String SEARCH_FIELD_XPATH = "//input[@placeholder='Поиск']";
     public static final String SEARCH_SUBMIT_BUTTON_XPATH = "//Button[@type='submit']";
     public static final String MAIL_OPEN_XPATH = "//*[contains(@class,'ns-view-messages-item-wrap')][1]//span[@title='Booking.com']";
@@ -41,6 +42,10 @@ public class YandexPage {
 
     public static WebElement webElementSubmitPasswordButton() {
         return driver.findElement(By.xpath(SUBMIT_PASSWORD_BUTTON_XPATH));
+    }
+
+    public static WebElement webElementSpamLink() {
+        return driver.findElement(By.xpath(SPAM_LINK_XPATH));
     }
 
     public static WebElement webElementSearchField() {
