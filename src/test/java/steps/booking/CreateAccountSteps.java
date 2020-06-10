@@ -46,15 +46,6 @@ public class CreateAccountSteps {
         homePage.webElementMyDashboardLink().click();
     }
 
-    public static void signIn(WebDriver driver, String email, String password) {
-        driver.get(BOOKING_URL);
-        homePage.webElementSignInLink().click();
-        accountCreatePage.webElementEmailTextField().sendKeys(email);
-        accountCreatePage.webElementGetStartedButton().click();
-        accountCreatePage.webElementCreatePasswordTextField().sendKeys(password);
-        accountCreatePage.webElementCreateAccountButton().click();
-    }
-
     public static void welcomingAlertClose(WebDriver driver) {
         homePage.welcomingAlertCloseButton().click();
     }

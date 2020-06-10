@@ -8,6 +8,8 @@ import org.openqa.selenium.interactions.Actions;
 
 public class StaysSearchResultsPage {
 
+
+
     public static WebElement executorSetBackgroundTitleColor(WebElement element, WebDriver driver, Actions actions) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true)", element);
         actions.moveToElement(driver.findElement(By.xpath("//*[@id=\"hotellist_inner\"]/div[11]/div[2]/div/div/div[2]/a"))).build().perform();
