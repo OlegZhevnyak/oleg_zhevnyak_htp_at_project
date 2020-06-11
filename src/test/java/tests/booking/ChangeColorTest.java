@@ -5,59 +5,58 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import pages.booking.StaysHomePage;
-import pages.booking.StaysSearchResultsPage;
+import pages.booking.SearchResultPage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
-import steps.booking.SimpleSteps;
+import steps.booking.ChangeColorSteps;
+import steps.booking.CommonSteps;
+import steps.booking.ExtendedSteps;
 
 import java.util.concurrent.TimeUnit;
 
 public class ChangeColorTest {
 
-    int startThrough = 1;
-    int duration = 1;
-    int adultNeed = 2;
-    int roomNeed = 1;
-    int childNeed = 1;
-    WebElement element;
-    WebDriver driver;
+    public static final String BOOKING_URL = "https://www.booking.com/";
+    public static final String START_DATE = ExtendedSteps.setDate(1);   //Start in 1 days
+    public static final String END_DATE = ExtendedSteps.setDate(2);     //Hotel reservation for 1 nights (2-1=1)
+
+    public static WebDriver driver;
+
+    static SearchResultPage searchResultPage = new SearchResultPage(GetDriver.getWebDriver(DriverConfig.CHROME));
 
     @Before
     public void preCondition() {
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
-        GeneralSteps.openPage(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
+        GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Test
-    public void booking3Test() throws InterruptedException {
-        StaysHomePage.setCityDateGuests(driver,
-                "Oslo", 1, 1, 2,0,1);
+    public void changeColorTest() throws InterruptedException {
+
+        CommonSteps.setCityDate(driver, "Oslo", START_DATE, END_DATE);
+        CommonSteps.setGuests(driver, 2, 1, 1);
+        CommonSteps.submitButtonClick(driver);
+        TimeUnit.SECONDS.sleep(1);
+
+        CommonSteps.setThreeStarsHotel(driver);
+        CommonSteps.setFourStarsHotel(driver);
         TimeUnit.SECONDS.sleep(4);
 
-        SimpleSteps.findElementClick(driver, "//*[@data-id=\"class-3\"]");
-        SimpleSteps.findElementClick(driver, "//*[@data-id=\"class-4\"]");
-        TimeUnit.SECONDS.sleep(4);
-        element = driver.findElement(By.xpath("//*[@id=\"hotellist_inner\"]/div[11]"));
-        TimeUnit.SECONDS.sleep(2);
+        ChangeColorSteps.scrollToThenthHotel(driver);
+        ChangeColorSteps.changeThenthHotelNameColor(driver, "red");
+        Assert.assertEquals("Tenth hotel name color should be red.",
+                "color: red;", searchResultPage.webElementTenthHotelName().getAttribute("style"));
 
-        Actions actions = new Actions(driver);
-        element = StaysSearchResultsPage.executorSetBackgroundTitleColor(element,driver,actions);
-
-        String textColor = element.getAttribute("style");
-        if (textColor.equals("color: red;"))
-            System.out.println("hotelName changed to Red color");
-        Assert.assertEquals("hotelName color should be red","color: red;", textColor);
+        ChangeColorSteps.changeThenthHotelNameColor(driver, "green");
+        Assert.assertEquals("Tenth hotel name color should be green.",
+                "color: green;", searchResultPage.webElementTenthHotelName().getAttribute("style"));
     }
 
     @After
     public void postCondition() {
         GeneralSteps.destroyDriver(driver);
     }
-
 }

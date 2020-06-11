@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
+import steps.booking.CommonSteps;
 import steps.booking.CreateAccountSteps;
 import steps.yandex_mail.RegistrationConfirmSteps;
 
@@ -38,7 +39,7 @@ public class RegistrationTest {
     @Test
     public void registrationConfirmTest() throws InterruptedException {
         //Create account on booking.com
-        CreateAccountSteps.registerButtonClick(driver);
+        CommonSteps.registerButtonClick(driver);
         CreateAccountSteps.emailSet(driver, DUMMY_EMAIL);
         CreateAccountSteps.passwordSet(driver, BOOKING_PASSWORD, BOOKING_CONFIRM_PASSWORD);
         CreateAccountSteps.welcomingAlertClose(driver);

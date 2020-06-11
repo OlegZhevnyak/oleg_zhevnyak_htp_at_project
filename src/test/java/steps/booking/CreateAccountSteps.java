@@ -4,7 +4,6 @@ import driver.GetDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.booking.AccountCreatePage;
 import pages.booking.DashboardPage;
 import pages.booking.HomePage;
@@ -20,9 +19,6 @@ public class CreateAccountSteps {
     static HomePage homePage = new HomePage(GetDriver.getWebDriver(DriverConfig.CHROME));
     static DashboardPage dashboardPage = new DashboardPage(GetDriver.getWebDriver(DriverConfig.CHROME));
 
-    public static void registerButtonClick(WebDriver driver) {
-        homePage.webElementRegisterLink().click();
-    }
 
     public static void emailSet(WebDriver driver, String email) {
         accountCreatePage.webElementEmailTextField().sendKeys(email);

@@ -6,11 +6,17 @@ import org.openqa.selenium.WebElement;
 
 public class HomePage {
 
+    //Set City, Check-in, Check-out, Adults, Children, Rooms, Search
     public static final String CITY_SEARCH_FIELD_XPATH = "//input[@id='ss']";
     public static final String CHECK_IN_FIELD_XPATH =
             "//div[@class='xp__dates-inner']/div[2]//span[@class='sb-date-field__icon sb-date-field__icon-btn bk-svg-wrapper calendar-restructure-sb']";
+    public static final String GUESTS_TOGGLE_XPATH = "//*[@class='xp__guests__count']";
+    public static final String ADULTS_INCREASE_BUTTON_XPATH = "//button[@aria-describedby='group_adults_desc'][2]";
+    public static final String CHILDREN_INCREASE_BUTTON_XPATH = "//button[@aria-describedby='group_children_desc'][2]";
+    public static final String ROOMS_INCREASE_BUTTON_XPATH = "//button[@aria-describedby='no_rooms_desc'][2]";
     public static final String SUBMIT_BUTTON_XPATH = "//button[@data-sb-id='main']";
 
+    //Registration part
     public static final String REGISTER_LINK_XPATH =
             "//li[@id='current_account_create']/a/div[@class='sign_in_wrapper']";
     public static final String SIGN_IN_XPATH = "//li[@id='current_account']/a";
@@ -35,6 +41,22 @@ public class HomePage {
 
     public static WebElement webElementCheckInField() {
         return driver.findElement(By.xpath(CHECK_IN_FIELD_XPATH));
+    }
+
+    public static WebElement webElementGuestsToggle() {
+        return driver.findElement(By.xpath(GUESTS_TOGGLE_XPATH));
+    }
+
+    public static WebElement webElementAdultsIncreaseButton() {
+        return driver.findElement(By.xpath(ADULTS_INCREASE_BUTTON_XPATH));
+    }
+
+    public static WebElement webElementChildrenIncreaseButton() {
+        return driver.findElement(By.xpath(CHILDREN_INCREASE_BUTTON_XPATH));
+    }
+
+    public static WebElement webElementRoomsIncreaseButton() {
+        return driver.findElement(By.xpath(ROOMS_INCREASE_BUTTON_XPATH));
     }
 
     public static WebElement webElementStartDate(String startDate) {

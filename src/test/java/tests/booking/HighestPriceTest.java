@@ -6,51 +6,51 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import pages.booking.StaysHomePage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
-import steps.booking.SimpleSteps;
+import steps.booking.CommonSteps;
+import steps.booking.ExtendedSteps;
+import steps.booking.PriceSteps;
 
 import java.util.concurrent.TimeUnit;
 
 public class HighestPriceTest {
-    
-    int startThrough = 3;
-    int duration = 7;
-    int adultNeed = 4;
-    int roomNeed = 2;
 
-    WebElement element;
-    WebDriver driver;
+    public static final String BOOKING_URL = "https://www.booking.com/";
+    public static final String START_DATE = ExtendedSteps.setDate(3);   //Start in 3 days
+    public static final String END_DATE = ExtendedSteps.setDate(10);    //Hotel reservation for 7 nights (10-3=7)
+    public static final int DURATION_DATE = 7;                          //Duration = 7 nights (10-3=7)
+
+    public static WebDriver driver;
 
     @Before
     public void preCondition() {
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
-        GeneralSteps.openPage(driver, "https://www.booking.com/", ScreenMode.MAXIMIZE);
+        GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Test
     public void bookingHighestPriceTest() throws InterruptedException {
-        StaysHomePage.setCityDateGuests(driver,
-                "Paris", 3, 7, 2,0,2);
+
+        CommonSteps.setCityDate(driver, "Paris", START_DATE, END_DATE);
+        CommonSteps.setGuests(driver, 4, 0, 2);
+        CommonSteps.submitButtonClick(driver);
+
+        CommonSteps.setHotelsWithHighestPrice(driver);
+        TimeUnit.SECONDS.sleep(4);
+        CommonSteps.sortByLowestPrice(driver);
         TimeUnit.SECONDS.sleep(4);
 
-        SimpleSteps.findElementClick(driver, "//*[contains(@class, \"sort_price\")]/a");
-        SimpleSteps.findElementClick(driver, "//*[@id=\"filter_price\"]//a[last()]");
-        TimeUnit.SECONDS.sleep(2);
+        int highestPricePerDay = PriceSteps.getHighestPrice(driver);
+        int pricePerDay = PriceSteps.getLowestFromSearchedPrice(driver) / DURATION_DATE;
 
-        String highestPricePerDay = SimpleSteps.findElementGetText(driver,
-                "//*[@id=\"filter_price\"]//a[last()]").replaceAll("\\D+", "");
+        System.out.println("highestPricePerDay :" + highestPricePerDay);
+        System.out.println("pricePerDay :" + pricePerDay);
 
-        String firstPrice = SimpleSteps.findElementGetText(driver,
-                "//*[contains(@class, \"bui-price-display\")]/div[2]/div").replaceAll("\\D+", "");
-        int pricePerDay = Integer.parseInt(firstPrice) / duration;
-
-        System.out.println("Highest price per day: " + highestPricePerDay + ". Price per day: " + pricePerDay + ".");
         Assert.assertTrue("highestPricePerDay should be >= then pricePerDay",
-                Integer.parseInt(highestPricePerDay) >= pricePerDay);
+                highestPricePerDay >= pricePerDay);
     }
 
     @After

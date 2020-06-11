@@ -1,7 +1,6 @@
 package steps.trash_mail;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.trash_mail.MainPage;
 
 public class NewUserSteps {

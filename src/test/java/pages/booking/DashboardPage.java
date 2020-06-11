@@ -24,12 +24,4 @@ public class DashboardPage {
         return driver.findElement(By.xpath(SECOND_HOTEL_NAME_XPATH));
     }
 
-//    public static WebElement webElementEmailConfirmBanner() {
-//        try {
-//            return driver.findElement(By.xpath(EMAIL_CONFIRM_BANNER_XPATH));
-//        } catch (NoSuchElementException e){
-//            System.out.println("Confirm Banner isn't present.");
-//        } return null; //???
-//    }
-
 }
