@@ -11,7 +11,6 @@ import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
 import steps.booking.CommonSteps;
-import steps.booking.CreateAccountSteps;
 import steps.booking.ExtendedSteps;
 
 import java.util.concurrent.TimeUnit;
@@ -82,8 +81,8 @@ public class HeaderElementsExistTest {
                 ExtendedSteps.isElementExist(driver,HeaderPage.AIRPORT_TAXIS_TAB_XPATH));
     }
 
-//    @After
-//    public void postCondition() {
-//        GeneralSteps.destroyDriver(driver);
-//    }
+    @After
+    public void postCondition() {
+        GeneralSteps.destroyDriver(driver);
+    }
 }

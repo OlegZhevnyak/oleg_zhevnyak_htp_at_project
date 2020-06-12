@@ -27,5 +27,4 @@ public class LogInPage {
     public static WebElement webElementPasswordTextField() {
         return driver.findElement(By.xpath(PASSWORD_TEXT_FIELD_XPATH));
     }
-
 }

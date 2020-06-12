@@ -54,5 +54,4 @@ public class ExtendedSteps {
         }
         return colorsEqual;
     }
-
 }

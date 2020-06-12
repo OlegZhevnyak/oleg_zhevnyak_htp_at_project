@@ -76,7 +76,6 @@ public class HomePage {
     public static WebElement webElementWishListLink() {
         return driver.findElement(By.xpath(WISH_LIST_LINK_XPATH));
     }
-
 }
 
 

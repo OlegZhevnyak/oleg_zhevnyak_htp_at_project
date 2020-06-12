@@ -37,5 +37,4 @@ public class AccountCreatePage {
     public static WebElement webElementCreateAccountButton() {
         return driver.findElement(By.xpath(CREATE_ACCOUNT_BUTTON_XPATH));
     }
-
 }

@@ -96,5 +96,4 @@ public class CommonSteps {
         headerPage.webElementYourAccountLink().click();
         homePage.webElementWishListLink().click();
     }
-
 }

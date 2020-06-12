@@ -19,5 +19,4 @@ public class ChangeColorSteps {
         ((JavascriptExecutor) driver).executeScript("arguments[0].style.color = '" + setColor + "'",
                 searchResultPage.webElementTenthHotelName());
     }
-
 }

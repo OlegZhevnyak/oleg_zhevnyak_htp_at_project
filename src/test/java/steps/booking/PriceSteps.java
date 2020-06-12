@@ -28,5 +28,4 @@ public class PriceSteps {
     public static int getLowestFromSearchedPrice(WebDriver driver) {
         return getPrice(searchResultPage.webElementLowestFromSearchedPrice());
     }
-
 }

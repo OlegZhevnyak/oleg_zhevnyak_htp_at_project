@@ -53,9 +53,8 @@ public class CreateNewUserTest {
                 ExpectedResult, NewUserSteps.actualResult(driver));
     }
 
-//    @After
-//    public void postCondition() {
-//        GeneralSteps.destroyDriver(driver);
-//    }
-
+    @After
+    public void postCondition() {
+        GeneralSteps.destroyDriver(driver);
+    }
 }

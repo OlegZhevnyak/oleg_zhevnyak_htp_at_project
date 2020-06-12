@@ -38,5 +38,4 @@ public class AddFavoriteHotelsSteps {
     public static String getSecondHotelNameFromWishList(WebDriver driver){
         return dashboardPage.webElementSecondHotelName().getText();
     }
-
 }

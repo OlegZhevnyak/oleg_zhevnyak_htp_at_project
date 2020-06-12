@@ -12,5 +12,4 @@ public class GetDriver {
             webDriver.set(GetDriverManager.getDriver(config));
         return webDriver.get();
     }
-
 }

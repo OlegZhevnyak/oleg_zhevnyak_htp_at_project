@@ -90,6 +90,4 @@ public static final String AIRPORT_TAXIS_TAB_XPATH =
     public static WebElement webElementYourAccountLink() {
         return driver.findElement(By.xpath(YOUR_ACCOUNT_LINK_XPATH));
     }
-
-
 }

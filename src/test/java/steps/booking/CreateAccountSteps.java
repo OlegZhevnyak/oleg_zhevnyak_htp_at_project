@@ -1,12 +1,8 @@
 package steps.booking;
 
 import driver.GetDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.booking.AccountCreatePage;
-import pages.booking.DashboardPage;
 import pages.booking.HeaderPage;
 import pages.booking.HomePage;
 import settings.DriverConfig;
@@ -46,5 +42,4 @@ public class CreateAccountSteps {
     public static void welcomingAlertClose(WebDriver driver) {
         homePage.welcomingAlertCloseButton().click();
     }
-
 }

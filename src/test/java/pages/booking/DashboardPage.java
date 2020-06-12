@@ -23,5 +23,4 @@ public class DashboardPage {
     public static WebElement webElementSecondHotelName(){
         return driver.findElement(By.xpath(SECOND_HOTEL_NAME_XPATH));
     }
-
 }

@@ -49,7 +49,6 @@ public class LowestPriceTest {
 
         Assert.assertTrue("highestPricePerDay should be >= then pricePerDay",
                 highestPricePerDay >= pricePerDay);
-
     }
 
     @After

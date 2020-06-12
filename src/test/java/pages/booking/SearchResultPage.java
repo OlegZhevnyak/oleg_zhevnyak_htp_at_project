@@ -103,5 +103,4 @@ public class SearchResultPage {
     public static List<WebElement> webElementsHotelOnSvg() {
         return driver.findElements(By.cssSelector(HOTEL_FAVORITE_ON_SVG_CSS_SELECTOR));
     }
-
 }

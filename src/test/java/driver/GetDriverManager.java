@@ -35,5 +35,4 @@ public class GetDriverManager {
         System.setProperty("webdriver.chrome.silentOutput", "true");
         return new ChromeDriver();
     }
-
 }
