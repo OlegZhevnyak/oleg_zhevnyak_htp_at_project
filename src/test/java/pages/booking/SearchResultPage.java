@@ -13,7 +13,6 @@ public class SearchResultPage {
     public static final String TENTH_HOTEL_XPATH = "//div[@id='hotellist_inner']/div[10]";
     public static final String TENTH_HOTEL_NAME_XPATH = "//div[@id='hotellist_inner']/div[10]//h3/a/span[1]";
 
-
     public static final String HOTELS_WITH_LOWEST_PRICE_CHECKBOX_XPATH =
             "//a[@data-id='pri-1']";
     public static final String HOTELS_WITH_HIGHEST_PRICE_CHECKBOX_XPATH =

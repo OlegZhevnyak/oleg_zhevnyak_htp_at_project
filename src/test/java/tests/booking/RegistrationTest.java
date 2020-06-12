@@ -6,11 +6,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+import pages.booking.DashboardPage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
 import steps.booking.CommonSteps;
 import steps.booking.CreateAccountSteps;
+import steps.booking.ExtendedSteps;
 import steps.yandex_mail.RegistrationConfirmSteps;
 
 import java.util.concurrent.TimeUnit;
@@ -49,7 +51,7 @@ public class RegistrationTest {
         CreateAccountSteps.dashboardOpen(driver);
         //Check, that ConfirmBanner isn't present = registration is confirmed
         Assert.assertFalse("Registration wasn't confirmed. Check email: " + YANDEX_EMAIL + ".",
-                CreateAccountSteps.isConfirmBannerPresented(driver));
+                ExtendedSteps.isElementExist(driver, DashboardPage.EMAIL_CONFIRM_BANNER_XPATH));
     }
 
     @After

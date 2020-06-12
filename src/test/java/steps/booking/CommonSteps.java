@@ -3,6 +3,7 @@ package steps.booking;
 import driver.GetDriver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import pages.booking.HeaderPage;
 import pages.booking.HomePage;
 import pages.booking.LogInPage;
 import pages.booking.SearchResultPage;
@@ -11,11 +12,12 @@ import settings.DriverConfig;
 public class CommonSteps {
 
     static HomePage homePage = new HomePage(GetDriver.getWebDriver(DriverConfig.CHROME));
+    static HeaderPage headerPage = new HeaderPage(GetDriver.getWebDriver(DriverConfig.CHROME));
     static LogInPage logInPage = new LogInPage(GetDriver.getWebDriver(DriverConfig.CHROME));
     static SearchResultPage searchResultPage = new SearchResultPage(GetDriver.getWebDriver(DriverConfig.CHROME));
 
     public static void logIn(WebDriver driver, String email, String password) {
-        homePage.webElementSignInLink().click();
+        headerPage.webElementSignInLink().click();
         logInPage.webElementUserTextField().sendKeys(email);
         logInPage.webElementNextButton().click();
         logInPage.webElementPasswordTextField().sendKeys(password);
@@ -75,7 +77,7 @@ public class CommonSteps {
     }
 
     public static void registerButtonClick(WebDriver driver) {
-        homePage.webElementRegisterLink().click();
+        headerPage.webElementRegisterLink().click();
     }
 
     public static void setHotelsWithLowestPrice(WebDriver driver) {
@@ -91,7 +93,7 @@ public class CommonSteps {
     }
 
     public static void openWishList(WebDriver driver){
-        homePage.webElementYourAccountLink().click();
+        headerPage.webElementYourAccountLink().click();
         homePage.webElementWishListLink().click();
     }
 

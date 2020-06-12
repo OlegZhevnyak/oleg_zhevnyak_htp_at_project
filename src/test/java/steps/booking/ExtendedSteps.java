@@ -1,6 +1,8 @@
 package steps.booking;
 
 import driver.GetDriver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.booking.SearchResultPage;
@@ -21,6 +23,16 @@ public class ExtendedSteps {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String datePlusTreeDays = dateFormat.format(tenDays);
         return datePlusTreeDays;
+    }
+
+    public static Boolean isElementExist(WebDriver driver, String xPath) {
+        Boolean elementCondition = false;
+        try {
+            elementCondition = driver.findElement(By.xpath(xPath)).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return elementCondition;
+        }
+        return elementCondition;
     }
 
     public static Boolean colorVerify(WebDriver driver, WebElement element, String expectedColor) {

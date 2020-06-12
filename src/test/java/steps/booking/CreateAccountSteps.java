@@ -4,8 +4,10 @@ import driver.GetDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.booking.AccountCreatePage;
 import pages.booking.DashboardPage;
+import pages.booking.HeaderPage;
 import pages.booking.HomePage;
 import settings.DriverConfig;
 
@@ -17,8 +19,7 @@ public class CreateAccountSteps {
 
     static AccountCreatePage accountCreatePage = new AccountCreatePage(GetDriver.getWebDriver(DriverConfig.CHROME));
     static HomePage homePage = new HomePage(GetDriver.getWebDriver(DriverConfig.CHROME));
-    static DashboardPage dashboardPage = new DashboardPage(GetDriver.getWebDriver(DriverConfig.CHROME));
-
+    static HeaderPage headerPage = new HeaderPage(GetDriver.getWebDriver(DriverConfig.CHROME));
 
     public static void emailSet(WebDriver driver, String email) {
         accountCreatePage.webElementEmailTextField().sendKeys(email);
@@ -38,22 +39,12 @@ public class CreateAccountSteps {
         driver.close();                                             //close the first tab
         driver.switchTo().window(tabs2.get(1));                     //switch to the second tab
         driver.get(BOOKING_URL);
-        homePage.webElementYourAccountLink().click();
+        headerPage.webElementYourAccountLink().click();
         homePage.webElementMyDashboardLink().click();
     }
 
     public static void welcomingAlertClose(WebDriver driver) {
         homePage.welcomingAlertCloseButton().click();
-    }
-
-    public static Boolean isConfirmBannerPresented(WebDriver driver) {
-        Boolean elementCondition = false;
-        try {
-            elementCondition = driver.findElement(By.xpath(dashboardPage.EMAIL_CONFIRM_BANNER_XPATH)).isDisplayed();
-        } catch (NoSuchElementException e) {
-            return elementCondition;
-        }
-        return elementCondition;
     }
 
 }

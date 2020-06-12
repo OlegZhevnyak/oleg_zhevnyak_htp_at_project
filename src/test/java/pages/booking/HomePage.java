@@ -16,12 +16,6 @@ public class HomePage {
     public static final String ROOMS_INCREASE_BUTTON_XPATH = "//button[@aria-describedby='no_rooms_desc'][2]";
     public static final String SUBMIT_BUTTON_XPATH = "//button[@data-sb-id='main']";
 
-    //Registration part
-    public static final String REGISTER_LINK_XPATH =
-            "//li[@id='current_account_create']/a/div[@class='sign_in_wrapper']";
-    public static final String SIGN_IN_XPATH = "//li[@id='current_account']/a";
-    public static final String YOUR_ACCOUNT_LINK_XPATH = "//span[@id='profile-menu-trigger--content']";
-
     //Dashboard pre-menu
     public static final String MY_DASHBOARD_LINK_XPATH =
             "//div[@class='profile-menu__item profile_menu__item--mydashboard']/a";
@@ -71,20 +65,8 @@ public class HomePage {
         return driver.findElement(By.xpath(SUBMIT_BUTTON_XPATH));
     }
 
-    public static WebElement webElementRegisterLink() {
-        return driver.findElement(By.xpath(REGISTER_LINK_XPATH));
-    }
-
-    public static WebElement webElementSignInLink() {
-        return driver.findElement(By.xpath(SIGN_IN_XPATH));
-    }
-
     public static WebElement welcomingAlertCloseButton() {
         return driver.findElement(By.xpath(WELCOMING_ALERT_CLOSE_BUTTON_XPATH));
-    }
-
-    public static WebElement webElementYourAccountLink() {
-        return driver.findElement(By.xpath(YOUR_ACCOUNT_LINK_XPATH));
     }
 
     public static WebElement webElementMyDashboardLink() {
