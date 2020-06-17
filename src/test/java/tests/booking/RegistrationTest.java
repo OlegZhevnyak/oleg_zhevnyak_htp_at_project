@@ -20,8 +20,8 @@ import java.util.concurrent.TimeUnit;
 public class RegistrationTest {
 
     public static final String BOOKING_URL = "https://www.booking.com/";
-    public static final String DUMMY_EMAIL = "korey_jaskolski@0box.eu";
-    public static final String DUMMY_EMAIL_1 = "kitty_borer68@0box.eu";
+    public static final String DUMMY_EMAIL = "jmaurine_rowe@0box.eu";           //since 17.06.20
+    public static final String DUMMY_EMAIL_1 = "jacques_green14@0box.eu";
     public static final String BOOKING_PASSWORD = "test555456";
     public static final String BOOKING_CONFIRM_PASSWORD = "test555456";
 

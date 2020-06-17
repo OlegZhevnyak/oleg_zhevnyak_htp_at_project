@@ -76,3 +76,9 @@ d{ABSOLUTE}  INFO main UserApiSteps:iVerifyThatIGot:29 - I verify that I got
 d{ABSOLUTE} ERROR main UserApiSteps:iStartExecution:17 - I start execution
 d{ABSOLUTE}  INFO main UserApiSteps:testSearch:22 - I search user by
 d{ABSOLUTE}  INFO main UserApiSteps:iVerifyThatIGot:29 - I verify that I got
+d{ABSOLUTE} ERROR main UserApiSteps:iStartExecution:17 - I start execution
+d{ABSOLUTE}  INFO main UserApiSteps:testSearch:22 - I search user by
+d{ABSOLUTE}  INFO main UserApiSteps:iVerifyThatIGot:29 - I verify that I got
+d{ABSOLUTE} ERROR main UserApiSteps:iStartExecution:17 - I start execution
+d{ABSOLUTE}  INFO main UserApiSteps:testSearch:22 - I search user by
+d{ABSOLUTE}  INFO main UserApiSteps:iVerifyThatIGot:29 - I verify that I got
