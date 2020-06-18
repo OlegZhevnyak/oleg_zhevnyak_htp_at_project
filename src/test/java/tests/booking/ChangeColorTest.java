@@ -1,6 +1,7 @@
 package tests.booking;
 
 import driver.GetDriver;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,6 +11,7 @@ import pages.booking.SearchResultPage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
+import steps.booking.AddFavoriteHotelsSteps;
 import steps.booking.ChangeColorSteps;
 import steps.booking.CommonSteps;
 import steps.booking.ExtendedSteps;
@@ -26,8 +28,11 @@ public class ChangeColorTest {
 
     static SearchResultPage searchResultPage = new SearchResultPage(GetDriver.getWebDriver(DriverConfig.CHROME));
 
+    public static Logger logger = Logger.getLogger(ChangeColorTest.class);
+
     @Before
     public void preCondition() {
+        logger.info("ChangeColorTest started execution");
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
         GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -45,18 +50,19 @@ public class ChangeColorTest {
         CommonSteps.setFourStarsHotel(driver);
         TimeUnit.SECONDS.sleep(4);
 
-        ChangeColorSteps.scrollToThenthHotel(driver);
-        ChangeColorSteps.changeThenthHotelNameColor(driver, "red");
+        ChangeColorSteps.scrollToTenthHotel(driver);
+        ChangeColorSteps.changeTenthHotelNameColor(driver, "red");
         Assert.assertEquals("Tenth hotel name color should be red.",
                 "color: red;", searchResultPage.webElementTenthHotelName().getAttribute("style"));
 
-        ChangeColorSteps.changeThenthHotelNameColor(driver, "green");
+        ChangeColorSteps.changeTenthHotelNameColor(driver, "green");
         Assert.assertEquals("Tenth hotel name color should be green.",
                 "color: green;", searchResultPage.webElementTenthHotelName().getAttribute("style"));
     }
 
     @After
     public void postCondition() {
+        logger.info("ChangeColorTest finished execution");
         GeneralSteps.destroyDriver(driver);
     }
 }

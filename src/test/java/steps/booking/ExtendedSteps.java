@@ -1,6 +1,7 @@
 package steps.booking;
 
 import driver.GetDriver;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -16,6 +17,8 @@ public class ExtendedSteps {
 
     static SearchResultPage searchResultPage = new SearchResultPage(GetDriver.getWebDriver(DriverConfig.CHROME));
 
+    public static Logger logger = Logger.getLogger(ExtendedSteps.class);
+
     public static String setDate(int days) {
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, days);
@@ -28,7 +31,9 @@ public class ExtendedSteps {
     public static Boolean isElementExist(WebDriver driver, String xPath) {
         Boolean elementCondition = false;
         try {
-            elementCondition = driver.findElement(By.xpath(xPath)).isDisplayed();
+            logger.debug("Verify that Element displayed.\n " +
+                            "Element xPath: " + xPath);
+                    elementCondition = driver.findElement(By.xpath(xPath)).isDisplayed();
         } catch (NoSuchElementException e) {
             return elementCondition;
         }

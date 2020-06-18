@@ -1,6 +1,7 @@
 package tests.booking;
 
 import driver.GetDriver;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -9,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
+import steps.booking.AddFavoriteHotelsSteps;
 import steps.booking.CommonSteps;
 import steps.booking.ExtendedSteps;
 import steps.booking.PriceSteps;
@@ -24,8 +26,11 @@ public class LowestPriceTest {
 
     public static  WebDriver driver;
 
+    public static Logger logger = Logger.getLogger(LowestPriceTest.class);
+
     @Before
     public void preCondition() {
+        logger.info("LowestPriceTest started execution");
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
         GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -53,6 +58,7 @@ public class LowestPriceTest {
 
     @After
     public void postCondition() {
+        logger.info("LowestPriceTest finished execution");
         GeneralSteps.destroyDriver(driver);
     }
 }

@@ -1,6 +1,7 @@
 package tests.booking;
 
 import driver.GetDriver;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,6 +11,7 @@ import pages.booking.HeaderPage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
+import steps.booking.AddFavoriteHotelsSteps;
 import steps.booking.CommonSteps;
 import steps.booking.ExtendedSteps;
 
@@ -23,8 +25,11 @@ public class HeaderElementsExistTest {
 
     public static WebDriver driver;
 
+    public static Logger logger = Logger.getLogger(HeaderElementsExistTest.class);
+
     @Before
     public void preCondition() {
+        logger.info("HeaderElementsExistTest started execution");
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
         GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -83,6 +88,7 @@ public class HeaderElementsExistTest {
 
     @After
     public void postCondition() {
+        logger.info("HeaderElementsExistTest finished execution");
         GeneralSteps.destroyDriver(driver);
     }
 }

@@ -52,11 +52,11 @@ public class SearchResultPage {
         return driver.findElement(By.xpath(FOUR_STARS_CHECKBOX_XPATH));
     }
 
-    public static WebElement webElementHotelsWithLowestPriceCkeckbox() {
+    public static WebElement webElementHotelsWithLowestPriceCheckbox() {
         return driver.findElement(By.xpath(HOTELS_WITH_LOWEST_PRICE_CHECKBOX_XPATH));
     }
 
-    public static WebElement webElementHotelsWithHighestPriceCkeckbox() {
+    public static WebElement webElementHotelsWithHighestPriceCheckbox() {
         return driver.findElement(By.xpath(HOTELS_WITH_HIGHEST_PRICE_CHECKBOX_XPATH));
     }
 

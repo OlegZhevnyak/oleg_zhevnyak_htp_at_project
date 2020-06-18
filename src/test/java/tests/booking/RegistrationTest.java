@@ -1,6 +1,7 @@
 package tests.booking;
 
 import driver.GetDriver;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,6 +11,7 @@ import pages.booking.DashboardPage;
 import settings.DriverConfig;
 import settings.ScreenMode;
 import steps.GeneralSteps;
+import steps.booking.AddFavoriteHotelsSteps;
 import steps.booking.CommonSteps;
 import steps.booking.CreateAccountSteps;
 import steps.booking.ExtendedSteps;
@@ -31,8 +33,11 @@ public class RegistrationTest {
 
     public static WebDriver driver;
 
+    public static Logger logger = Logger.getLogger(RegistrationTest.class);
+
     @Before
     public void preCondition() {
+        logger.info("RegistrationTest started execution");
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
         GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -56,6 +61,7 @@ public class RegistrationTest {
 
     @After
     public void postCondition() {
-    GeneralSteps.destroyDriver(driver);
+        logger.info("RegistrationTest finished execution");
+        GeneralSteps.destroyDriver(driver);
     }
 }

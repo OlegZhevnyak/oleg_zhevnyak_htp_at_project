@@ -1,6 +1,7 @@
 package tests.booking;
 
 import driver.GetDriver;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -30,8 +31,11 @@ public class AddFavoriteHotelsTest {
 
     public static WebDriver driver;
 
+    public static Logger logger = Logger.getLogger(AddFavoriteHotelsTest.class);
+
     @Before
     public void preCondition() {
+        logger.info("AddFavoriteHotelsTest started execution");
         driver = GetDriver.getWebDriver(DriverConfig.CHROME);
         GeneralSteps.openPage(driver, BOOKING_URL, ScreenMode.MAXIMIZE);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -68,6 +72,7 @@ public class AddFavoriteHotelsTest {
 
     @After
     public void postCondition() {
+        logger.info("AddFavoriteHotelsTest finished execution");
         GeneralSteps.destroyDriver(driver);
     }
 }

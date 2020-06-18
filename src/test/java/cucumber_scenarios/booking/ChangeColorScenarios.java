@@ -27,12 +27,12 @@ public class ChangeColorScenarios {
 
     @Then("I scroll to tenth hotel")
     public void iScrollToTenthHotel() {
-        ChangeColorSteps.scrollToThenthHotel(driver = GetDriver.getWebDriver(DriverConfig.CHROME));
+        ChangeColorSteps.scrollToTenthHotel(driver = GetDriver.getWebDriver(DriverConfig.CHROME));
     }
 
     @Then("I change hotel name to {string}")
     public void iChaneHotelNameColor(String string) {
-        ChangeColorSteps.changeThenthHotelNameColor(driver = GetDriver.getWebDriver(DriverConfig.CHROME), string);
+        ChangeColorSteps.changeTenthHotelNameColor(driver = GetDriver.getWebDriver(DriverConfig.CHROME), string);
     }
 
     @Then("I check that hotel name changed to {string}")

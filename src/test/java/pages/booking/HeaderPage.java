@@ -30,7 +30,7 @@ public static final String AIRPORT_TAXIS_TAB_XPATH =
 
     public static final String REGISTER_LINK_XPATH =
             "//li[@id='current_account_create']/a/div[@class='sign_in_wrapper']";
-    public static final String SIGN_IN_XPATH = "//li[@id='current_account']/a";
+    public static final String SIGN_IN_LINK_XPATH = "//li[@id='current_account']/a";
     public static final String YOUR_ACCOUNT_LINK_XPATH = "//span[@id='profile-menu-trigger--content']";
 
     public static WebDriver driver;
@@ -84,7 +84,7 @@ public static final String AIRPORT_TAXIS_TAB_XPATH =
     }
 
     public static WebElement webElementSignInLink() {
-        return driver.findElement(By.xpath(SIGN_IN_XPATH));
+        return driver.findElement(By.xpath(SIGN_IN_LINK_XPATH));
     }
 
     public static WebElement webElementYourAccountLink() {

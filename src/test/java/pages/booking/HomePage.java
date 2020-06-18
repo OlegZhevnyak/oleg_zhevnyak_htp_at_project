@@ -8,7 +8,7 @@ public class HomePage {
 
     //Set City, Check-in, Check-out, Adults, Children, Rooms, Search
     public static final String CITY_SEARCH_FIELD_XPATH = "//input[@id='ss']";
-    public static final String CHECK_IN_FIELD_XPATH =
+    public static final String CHECK_IN_BUTTON_XPATH =
             "//div[@class='xp__dates-inner']/div[2]//span[@class='sb-date-field__icon sb-date-field__icon-btn bk-svg-wrapper calendar-restructure-sb']";
     public static final String GUESTS_TOGGLE_XPATH = "//*[@class='xp__guests__count']";
     public static final String ADULTS_INCREASE_BUTTON_XPATH = "//button[@aria-describedby='group_adults_desc'][2]";
@@ -29,12 +29,12 @@ public class HomePage {
         this.driver = driver;
     }
 
-    public static WebElement webElementCitySearchLink() {
+    public static WebElement webElementCitySearchField() {
         return driver.findElement(By.xpath(CITY_SEARCH_FIELD_XPATH));
     }
 
-    public static WebElement webElementCheckInField() {
-        return driver.findElement(By.xpath(CHECK_IN_FIELD_XPATH));
+    public static WebElement webElementCheckInButton() {
+        return driver.findElement(By.xpath(CHECK_IN_BUTTON_XPATH));
     }
 
     public static WebElement webElementGuestsToggle() {
