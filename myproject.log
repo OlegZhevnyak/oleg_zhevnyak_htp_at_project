@@ -424,3 +424,12 @@
 13:16:39,688 DEBUG main PoolingHttpClientConnectionManager:releaseConnection:344 - Connection [id: 4][route: {}->http://178.124.206.46:8001] can be kept alive for 5.0 seconds
 13:16:39,688 DEBUG main DefaultManagedHttpClientConnection:setSocketTimeout:88 - http-outgoing-4: set socket timeout to 0
 13:16:39,688 DEBUG main PoolingHttpClientConnectionManager:releaseConnection:351 - Connection released: [id: 4][route: {}->http://178.124.206.46:8001][total available: 1; route allocated: 1 of 2; total allocated: 1 of 20]
+20:45:32,120 DEBUG main SearchMovieSteps:getMoviesAmount:29 - Replace all symbols except numbers from text
+20:45:32,126 DEBUG main SearchMovieSteps:getMoviesAmount:31 - Parse String text to int
+20:45:32,127 DEBUG main SearchMovieSteps:isFoundFilmsListPresent:39 - Verify that Element displayed.
+20:48:28,251 DEBUG main SearchMovieSteps:getMoviesAmount:29 - Replace all symbols except numbers from text
+20:48:28,257 DEBUG main SearchMovieSteps:getMoviesAmount:31 - Parse String text to int
+20:48:28,258 DEBUG main SearchMovieSteps:isFoundFilmsListPresent:39 - Verify that Element displayed.
+20:50:00,194 DEBUG main SearchMovieSteps:getMoviesAmount:29 - Replace all symbols except numbers from text
+20:50:00,201 DEBUG main SearchMovieSteps:getMoviesAmount:31 - Parse String text to int
+20:50:00,202 DEBUG main SearchMovieSteps:isFoundFilmsListPresent:39 - Verify that Element displayed.
