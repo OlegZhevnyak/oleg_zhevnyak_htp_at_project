@@ -1,0 +1,31 @@
+23:13:03,824  INFO main ChangeColorTest:preCondition:34 - ChangeColorTest started execution
+23:13:09,167 DEBUG main CommonSteps:setCityDate:41 - Clear the City search field.
+ City search field xPath: //input[@id='ss']
+23:13:10,261 DEBUG main CommonSteps:setCityDate:44 - Type Oslo to the City search field.
+ City search field xPath: //input[@id='ss']
+23:13:11,365 DEBUG main CommonSteps:setCityDate:47 - Click the Check In button.
+ Check In button xPath: //div[@class='xp__dates-inner']/div[2]//span[@class='sb-date-field__icon sb-date-field__icon-btn bk-svg-wrapper calendar-restructure-sb']
+23:13:11,638 DEBUG main CommonSteps:setCityDate:50 - Choose and click the StartDate.
+ StartDate xPath: //td[@data-date='" + startDate + "']
+23:13:12,048 DEBUG main CommonSteps:setCityDate:53 - Choose and click the EndDate.
+ EndDate xPath: //td[@data-date='" + endDate + "']
+23:13:12,316 DEBUG main CommonSteps:setGuests:83 - Click Guests toggle.
+ Guests toggle xPath: //*[@class='xp__guests__count']
+23:13:12,497 DEBUG main CommonSteps:setGuests:86 - Set adults amount = 2
+23:13:12,497 DEBUG main CommonSteps:setGuests:88 - Set children amount = 1
+23:13:12,497 DEBUG main CommonSteps:setChildren:68 - Click Add children button.
+ Add children button xPath: //button[@aria-describedby='group_children_desc'][2]
+23:13:12,672 DEBUG main CommonSteps:setGuests:90 - Set rooms amount = 1
+23:13:12,672 DEBUG main CommonSteps:submitButtonClick:108 - Click Guests toggle.
+ Guests toggle xPath: //*[@class='xp__guests__count']
+23:13:17,332 DEBUG main CommonSteps:setThreeStarsHotel:114 - Click Three Stars checkbox.
+ Three Stars checkbox xPath: //a[@data-id='class-3']
+23:13:18,859 DEBUG main CommonSteps:setFourStarsHotel:120 - Click Four Stars checkbox.
+ Four Stars checkbox xPath: //a[@data-id='class-4']
+23:13:23,161 DEBUG main ChangeColorSteps:scrollToTenthHotel:17 - Scroll to the tenth hotel.
+ Tenth hotel xPath: //div[@id='hotellist_inner']/div[10]
+23:13:23,255 DEBUG main ChangeColorSteps:changeTenthHotelNameColor:24 - Change color of the tenth hotel name.
+ Tenth hotel name xPath: //div[@id='hotellist_inner']/div[10]//h3/a/span[1]
+23:13:23,352 DEBUG main ChangeColorSteps:changeTenthHotelNameColor:24 - Change color of the tenth hotel name.
+ Tenth hotel name xPath: //div[@id='hotellist_inner']/div[10]//h3/a/span[1]
+23:13:23,410  INFO main ChangeColorTest:postCondition:64 - ChangeColorTest finished execution
