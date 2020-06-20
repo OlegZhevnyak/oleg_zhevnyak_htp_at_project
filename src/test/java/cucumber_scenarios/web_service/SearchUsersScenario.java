@@ -1,14 +1,13 @@
 package cucumber_scenarios.web_service;
 
-import application.items.SearchRequestData;
-import application.items.UserData;
+import web_service.items.SearchRequestData;
+import web_service.items.UserData;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import connection.web_service.HttpConnection;
+import web_service.connection.HttpConnection;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
-import org.junit.Test;
 import steps.web_service.RequestDataSteps;
 
 import java.io.FileNotFoundException;

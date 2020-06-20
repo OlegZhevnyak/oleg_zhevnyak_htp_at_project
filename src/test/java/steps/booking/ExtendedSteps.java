@@ -7,7 +7,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import pages.booking.SearchResultPage;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

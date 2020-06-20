@@ -2,11 +2,10 @@ package steps.cinema;
 
 import driver.GetDriver;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import pages.silverscreen.HomePage;
 import pages.silverscreen.SearchResultsPage;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 import java.util.concurrent.TimeUnit;
 

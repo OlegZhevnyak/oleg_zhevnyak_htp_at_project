@@ -3,7 +3,7 @@ package steps.yandex_mail;
 import driver.GetDriver;
 import org.openqa.selenium.WebDriver;
 import pages.yandex_mail.YandexPage;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;

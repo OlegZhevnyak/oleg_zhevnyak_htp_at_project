@@ -6,7 +6,7 @@ import driver.GetDriver;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.booking.SearchResultPage;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 import steps.booking.ChangeColorSteps;
 import steps.booking.CommonSteps;
 

@@ -2,14 +2,11 @@ package steps.cinema;
 
 import driver.GetDriver;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import pages.silverscreen.HomePage;
 import pages.silverscreen.SearchResultsPage;
-import settings.DriverConfig;
-import steps.booking.ChangeColorSteps;
+import driver.settings.DriverConfig;
 
 public class SearchMovieSteps {
 

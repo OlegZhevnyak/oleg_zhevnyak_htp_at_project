@@ -8,7 +8,7 @@ import pages.booking.HeaderPage;
 import pages.booking.HomePage;
 import pages.booking.LogInPage;
 import pages.booking.SearchResultPage;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 public class CommonSteps {
 

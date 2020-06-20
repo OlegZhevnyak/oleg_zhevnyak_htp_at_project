@@ -1,8 +1,8 @@
 package steps;
 
 import org.openqa.selenium.WebDriver;
-import settings.DriverScreenSettings;
-import settings.ScreenMode;
+import driver.settings.DriverScreenSettings;
+import driver.settings.ScreenMode;
 
 public class GeneralSteps {
 

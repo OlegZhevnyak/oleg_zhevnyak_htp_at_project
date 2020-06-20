@@ -1,7 +1,7 @@
 package driver;
 
 import org.openqa.selenium.WebDriver;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 public class GetDriver {
 

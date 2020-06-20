@@ -1,16 +1,15 @@
 package tests.web_service;
 
-import application.items.*;
+import web_service.items.*;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import steps.web_service.RequestDataSteps;
-import connection.web_service.HttpConnection;
+import web_service.connection.HttpConnection;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Type;
 import java.net.URISyntaxException;
 
 public class SearchAllUsersTest {

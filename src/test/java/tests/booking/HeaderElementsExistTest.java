@@ -8,10 +8,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pages.booking.HeaderPage;
-import settings.DriverConfig;
-import settings.ScreenMode;
+import driver.settings.DriverConfig;
+import driver.settings.ScreenMode;
 import steps.GeneralSteps;
-import steps.booking.AddFavoriteHotelsSteps;
 import steps.booking.CommonSteps;
 import steps.booking.ExtendedSteps;
 

@@ -5,7 +5,7 @@ import cucumber.api.java.en.When;
 import driver.GetDriver;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 import steps.booking.AddFavoriteHotelsSteps;
 import steps.booking.CommonSteps;
 

@@ -2,7 +2,7 @@ package steps.web_service;
 
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
-import application.items.SearchRequestData;
+import web_service.items.SearchRequestData;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
