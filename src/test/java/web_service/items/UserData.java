@@ -1,4 +1,4 @@
-package application.items;
+package web_service.items;
 
 import java.util.List;
 import java.util.Objects;

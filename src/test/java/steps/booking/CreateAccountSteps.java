@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import pages.booking.AccountCreatePage;
 import pages.booking.HeaderPage;
 import pages.booking.HomePage;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 import java.util.ArrayList;
 

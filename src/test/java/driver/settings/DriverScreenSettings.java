@@ -1,4 +1,4 @@
-package settings;
+package driver.settings;
 
 import org.openqa.selenium.WebDriver;
 

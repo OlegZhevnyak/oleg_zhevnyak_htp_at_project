@@ -3,9 +3,9 @@ package tests.web_service;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 import steps.web_service.RequestDataSteps;
-import connection.web_service.HttpConnection;
-import application.items.SearchRequestData;
-import application.items.UserData;
+import web_service.connection.HttpConnection;
+import web_service.items.SearchRequestData;
+import web_service.items.UserData;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -8,8 +8,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        glue = {"driver", "settings", "pages.cinema", "steps", "steps.cinema", "steps.trash_mail",
-                "steps.yandex_mail", "steps.gui", "cucumber_scenarios.cinema"},
+        glue = {"driver", "driver.settings", "pages.cinema", "steps", "steps.cinema",
+                "cucumber_scenarios.cinema"},
         features = {"src/test/resources/features/cinema/searchMovie.feature"},
         monochrome = false,
         snippets = SnippetType.CAMELCASE,

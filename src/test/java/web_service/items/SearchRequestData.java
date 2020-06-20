@@ -1,4 +1,4 @@
-package application.items;
+package web_service.items;
 
 public class SearchRequestData {
 

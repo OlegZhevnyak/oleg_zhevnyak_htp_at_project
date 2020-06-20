@@ -2,14 +2,9 @@ package cucumber_scenarios.booking;
 
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import driver.GetDriver;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import settings.DriverConfig;
-import steps.GeneralSteps;
 import steps.booking.CommonSteps;
-import steps.booking.ExtendedSteps;
 import steps.booking.PriceSteps;
 
 import java.util.concurrent.TimeUnit;

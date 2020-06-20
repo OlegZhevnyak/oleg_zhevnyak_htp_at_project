@@ -3,15 +3,10 @@ package cucumber_scenarios.booking;
 import cucumber.api.java.en.Then;
 import driver.GetDriver;
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import pages.booking.HeaderPage;
-import settings.DriverConfig;
-import steps.GeneralSteps;
-import steps.booking.CommonSteps;
+import driver.settings.DriverConfig;
 import steps.booking.ExtendedSteps;
-
-import java.util.concurrent.TimeUnit;
 
 public class HeaderElementsExistScenarios {
 

@@ -1,6 +1,6 @@
-package connection.web_service;
+package web_service.connection;
 
-import application.items.SearchRequestData;
+import web_service.items.SearchRequestData;
 import com.google.gson.Gson;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

@@ -4,7 +4,7 @@ import driver.GetDriver;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import pages.booking.*;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 public class AddFavoriteHotelsSteps {
 

@@ -5,7 +5,7 @@ import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import pages.booking.SearchResultPage;
-import settings.DriverConfig;
+import driver.settings.DriverConfig;
 
 public class ChangeColorSteps {
 
